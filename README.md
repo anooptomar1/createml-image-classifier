@@ -31,7 +31,7 @@ This process could take a while.
 
 ### Validating and Evaluating your model
 
-Xcode will acutomatically generate a validation set from your data. We'll test our model using new data. Here, I'll use another way to access our testing data using `labeledDirectories`. 
+Xcode will acutomatically generate a validation set from your data. For evaluating, we'll use another way to access our testing data using `labeledDirectories`. 
 
 ![](https://github.com/pdelfan/createml-image-classifier/blob/master/Images/2.png)
 
