@@ -29,7 +29,7 @@ This process could take a while.
 
 ### 3- Evaluating your model
 
-If you don't provide data for testing, Xcode will acutomatically generate a testing set from your data. It'd be better to test your model using new data. Here, I've used another way to access data source, `labeledDirectories`. 
+If you don't provide data for testing, Xcode will acutomatically generate a testing set from your data. It'd be better to test your model using new data. Here, I'll use another way to access our testing data using `labeledDirectories`. 
 
 ![](https://github.com/pdelfan/createml-image-classifier/blob/master/Images/2.png)
 
