@@ -1,5 +1,5 @@
 # Create ML Image Classifier
---
+
 ### 1- Provide URLs for training and testing
 
 You can import `CreateMLUI` to train the image classifier by using drag & drop. Here I'll use another way.
@@ -11,9 +11,13 @@ For my example, I have a folder noamed "train" which contains images of cats and
 ![](https://github.com/pdelfan/createml-image-classifier/blob/master/Images/1.png)
 
 
-My directory for training data would be:
+My directories for training and testing data would be:
 
-`let trainingDir = URL(fileURLWithPath: "/Users/johndoe/Desktop/train")`
+```
+let trainingDir = URL(fileURLWithPath: "/Users/johndoe/Desktop/createml-image-classifier/Training")
+
+let testingDir  = URL(fileURLWithPath: "/Users/johndoe/Desktop/createml-image-classifier/Testing")
+```
 
 ### 2- Train using the data
 
@@ -21,19 +25,30 @@ Now that you've specifiec your training directory, create a model and train it u
 
 `let model = try MLImageClassifier(trainingData: .labeledFiles(at: trainingDir))`
 
-This process could take a while. If you don't provide data for testing, Xcode will acutomatically generate a testing set from your data. 
+This process could take a while. 
 
-### 3- Save your model
+### 3- Evaluating your model
+
+If you don't provide data for testing, Xcode will acutomatically generate a testing set from your data. It'd be better to test your model using new data. Here, I've used another way to access data source, `labeledDirectories`. 
+
+![](https://github.com/pdelfan/createml-image-classifier/blob/master/Images/2.png)
+
+In this example, you have different one folder named "Testing". In this folder, you have two other folders labeled "cat" and "dog", instead of having all the data in one folder.
+
+`let evaluation = model.evaluation(on: .labeledDirectories(at: testingDir))
+` 
+
+### 4- Save your model
 
 At the end, we save our model. If you want, create a metadata to provide more information about your model.
 
 ```
 let metadata = MLModelMetadata(author: "John", shortDescription: "A model trained to recognize cats and dogs.", license: nil, version: "1.0", additional: nil)
 
-try model.write(to: URL(fileURLWithPath: "Users/johndoe/Desktop/catDog"), metadata: metadata)
+try model.write(to: URL(fileURLWithPath: "Users/johndoe/Desktop/yourModel"), metadata: metadata)
 ```
 
-And now you have a model.
+And now you have a model!
 
 --
 
