@@ -50,6 +50,6 @@ try model.write(to: URL(fileURLWithPath: "Users/johndoe/Desktop/yourModel"), met
 
 And now you have a model!
 
---
+---
 
 Data used for this example (from Kaggle): [Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats)
