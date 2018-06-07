@@ -21,7 +21,7 @@ let testingDir  = URL(fileURLWithPath: "/Users/johndoe/Desktop/createml-image-cl
 
 ### Train using the data
 
-Now that you've specifiec your training directory, create a model and train it using training data.
+Now that you've specified your training directory, create a model and train it using training data.
 
 ```swift
 let model = try MLImageClassifier(trainingData: .labeledFiles(at: trainingDir))
