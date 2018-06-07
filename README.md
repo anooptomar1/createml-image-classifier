@@ -1,6 +1,6 @@
 # Create ML Image Classifier
 
-### 1- Provide URLs for training and testing
+### Provide URLs for training and testing
 
 You can import `CreateMLUI` to train the image classifier by using drag & drop. Here I'll use another way.
 
@@ -19,7 +19,7 @@ let trainingDir = URL(fileURLWithPath: "/Users/johndoe/Desktop/createml-image-cl
 let testingDir  = URL(fileURLWithPath: "/Users/johndoe/Desktop/createml-image-classifier/Testing")
 ```
 
-### 2- Train using the data
+### Train using the data
 
 Now that you've specifiec your training directory, create a model and train it using training data.
 
@@ -29,7 +29,7 @@ let model = try MLImageClassifier(trainingData: .labeledFiles(at: trainingDir))
 
 This process could take a while. 
 
-### 3- Evaluating your model
+### Evaluating your model
 
 If you don't provide data for testing, Xcode will acutomatically generate a testing set from your data. It'd be better to test your model using new data. Here, I'll use another way to access our testing data using `labeledDirectories`. 
 
@@ -41,7 +41,7 @@ In this example, you have one folder named "Testing". In this folder, you have t
 let evaluation = model.evaluation(on: .labeledDirectories(at: testingDir))
 ```
 
-### 4- Save your model
+### Save your model
 
 At the end, we save our model. If you want, create a metadata to provide more information about your model.
 
