@@ -13,7 +13,7 @@ For my example, I have a folder noamed "Training" which contains images of cats 
 
 My directories for training and testing data would be:
 
-```
+```swift
 let trainingDir = URL(fileURLWithPath: "/Users/johndoe/Desktop/createml-image-classifier/Training")
 
 let testingDir  = URL(fileURLWithPath: "/Users/johndoe/Desktop/createml-image-classifier/Testing")
@@ -23,7 +23,9 @@ let testingDir  = URL(fileURLWithPath: "/Users/johndoe/Desktop/createml-image-cl
 
 Now that you've specifiec your training directory, create a model and train it using training data.
 
-`let model = try MLImageClassifier(trainingData: .labeledFiles(at: trainingDir))`
+```swift
+let model = try MLImageClassifier(trainingData: .labeledFiles(at: trainingDir))
+```
 
 This process could take a while. 
 
@@ -35,14 +37,15 @@ If you don't provide data for testing, Xcode will acutomatically generate a test
 
 In this example, you have one folder named "Testing". In this folder, you have two other folders labeled "cat" and "dog", instead of having all the data in one folder like our training data.
 
-`let evaluation = model.evaluation(on: .labeledDirectories(at: testingDir))
-` 
+```swift
+let evaluation = model.evaluation(on: .labeledDirectories(at: testingDir))
+```
 
 ### 4- Save your model
 
 At the end, we save our model. If you want, create a metadata to provide more information about your model.
 
-```
+```swift
 let metadata = MLModelMetadata(author: "John", shortDescription: "A model trained to recognize cats and dogs.", license: nil, version: "1.0", additional: nil)
 
 try model.write(to: URL(fileURLWithPath: "Users/johndoe/Desktop/yourModel"), metadata: metadata)
