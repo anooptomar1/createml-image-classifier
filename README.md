@@ -33,7 +33,7 @@ If you don't provide data for testing, Xcode will acutomatically generate a test
 
 ![](https://github.com/pdelfan/createml-image-classifier/blob/master/Images/2.png)
 
-In this example, you have different one folder named "Testing". In this folder, you have two other folders labeled "cat" and "dog", instead of having all the data in one folder.
+In this example, you have one folder named "Testing". In this folder, you have two other folders labeled "cat" and "dog", instead of having all the data in one folder like our training data.
 
 `let evaluation = model.evaluation(on: .labeledDirectories(at: testingDir))
 ` 
