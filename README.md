@@ -29,7 +29,7 @@ let model = try MLImageClassifier(trainingData: .labeledFiles(at: trainingDir))
 
 This process could take a while. 
 
-### Evaluating your model
+### Validating and Evaluating your model
 
 Xcode will acutomatically generate a validation set from your data. We'll test our model using new data. Here, I'll use another way to access our testing data using `labeledDirectories`. 
 
