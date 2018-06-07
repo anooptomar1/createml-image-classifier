@@ -8,7 +8,7 @@ For ImageClassifier, you can use directory structure (labeling separate folders 
 
 For my example, I have a folder noamed "train" which contains images of cats and dogs, nammed accordingly. Whatever you put in the first part of the image's name (**cat**.1.jpg) will be a label. The name after the second period (cat.**2**.jpg) is used to differentiate between each image. If you have different formats of the same image, assign them the same number.
 
-![](/Users/pouriadelfanazari/Desktop/createml-image-classifier/Images/1.png)
+![](https://github.com/pdelfan/createml-image-classifier/blob/master/Images/1.png)
 
 
 My directory for training data would be:
